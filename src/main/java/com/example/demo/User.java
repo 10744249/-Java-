@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "users") // 確保表名符合您的數據庫設計
+@Table(name = "users") 
 public class User {
 
     @Id
@@ -26,11 +26,11 @@ public class User {
     @Column(name = "last_login_time")
     private LocalDateTime lastLoginTime;
 
-    // 構造函數、getter 和 setter 方法
+   
     public User() {
     }
 
-    // Getter和Setter省略，請根據需要添加
+    
     public Long getUserId() {
         return userId;
     }

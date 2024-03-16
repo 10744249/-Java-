@@ -15,7 +15,7 @@ public class Inventory {
 
     private String status; // 書籍狀態
 
-    // Getters 和 Setters
+   
     public Long getId() {
         return id;
     }

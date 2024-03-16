@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+//註冊功能和登入驗證功能
 @Service
 public class UserServiceClass {
 
@@ -18,7 +19,7 @@ public class UserServiceClass {
         this.passwordEncoder = new BCryptPasswordEncoder();
     }
 
-    // Register a new user
+    // 註冊新用戶
     public boolean registerUser(User user) {
         // Check if phone number is already in use
         Optional<User> existingUser = userRepository.findByPhoneNumber(user.getPhoneNumber());
@@ -27,11 +28,11 @@ public class UserServiceClass {
             return false;
         }
 
-        // Encrypt the password before saving to database
+        // 加密
         String encryptedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encryptedPassword);
 
-        // Set the registration and last login time to the current time
+        // 將註冊和上次登入時間設定為目前時間
         LocalDateTime now = LocalDateTime.now();
         user.setRegistrationTime(now);
         user.setLastLoginTime(now);
@@ -41,7 +42,7 @@ public class UserServiceClass {
         return true;
     }
 
-    // Authenticate user login
+    // 使用著登入
     public boolean authenticateUser(User user) {
         // Retrieve the user by phone number
         Optional<User> foundUser = userRepository.findByPhoneNumber(user.getPhoneNumber());
@@ -49,7 +50,7 @@ public class UserServiceClass {
             return false; // User not found
         }
 
-        // Check the password
+        // 確認密碼
         return passwordEncoder.matches(user.getPassword(), foundUser.get().getPassword());
     }
 }

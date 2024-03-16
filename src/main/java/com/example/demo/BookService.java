@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.Optional;
 
+//借還書功能
+
 @Service
 public class BookService {
 
@@ -29,12 +31,12 @@ public class BookService {
         bookToBorrow.setStatus("借出");
         bookRepository.save(bookToBorrow);
 
-        // 創建借閱記錄
+        // 借閱記錄
         BorrowingRecord record = new BorrowingRecord();
         record.setUserId(userId);
         record.setInventoryId(inventoryId);
         record.setBorrowingTime(new Date());
-        // 預計還書時間和其他細節根據實際業務需求設定
+        //
         borrowingRecordRepository.save(record);
 
         return true;

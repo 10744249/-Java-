@@ -13,7 +13,7 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status; // 書籍狀態，例如 "可借閱" 或 "借出"
+    private String status; // 書籍狀態
 
     // Getters 和 Setters
     public Long getId() {
@@ -32,5 +32,5 @@ public class Inventory {
         this.status = status;
     }
 
-    // 可以根據需要添加更多字段和方法
+    //待更新
 }

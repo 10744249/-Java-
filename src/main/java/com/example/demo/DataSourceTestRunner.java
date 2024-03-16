@@ -20,7 +20,7 @@ public class DataSourceTestRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         try (Connection connection = dataSource.getConnection()) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT 1"); // 執行一個簡單的查詢來測試連接
+            ResultSet resultSet = statement.executeQuery("SELECT 1"); //測試連接
             if (resultSet.next()) {
                 System.out.println("資料庫連接成功！");
             } else {

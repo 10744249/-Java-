@@ -22,14 +22,14 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // 禁用 CSRF
                 .authorizeRequests(authz -> authz
-                        .requestMatchers("/api/register", "/api/login").permitAll() // 允许访问注册和登录端点
-                        .anyRequest().authenticated()) // 其他请求需要认证
+                        .requestMatchers("/api/register", "/api/login").permitAll()  
+                        .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .permitAll()) // 配置表单登录
+                        .permitAll()) 
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                        .logoutSuccessUrl("/login?logout").permitAll()); // 配置登出
+                        .logoutSuccessUrl("/login?logout").permitAll()); 
         return http.build();
     }
 }

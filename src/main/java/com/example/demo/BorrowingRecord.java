@@ -27,7 +27,7 @@ public class BorrowingRecord {
     private Date borrowingTime; // 借閱時間
 
     @Column(name = "status")
-    private String status; // 新增：借閱記錄的狀態（例如："借出"、"已還"）
+    private String status; // 新增借閱記錄的狀態
 
     // Getters 和 Setters
     public Long getId() {

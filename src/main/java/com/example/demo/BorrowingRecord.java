@@ -8,6 +8,8 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 import java.util.Date;
 
+//資料庫欄位
+
 @Entity
 @Table(name = "borrowing_record")
 public class BorrowingRecord {

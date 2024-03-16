@@ -22,9 +22,9 @@ public class ControllerClass {
     public ResponseEntity<String> registerUser(@RequestBody User user) {
         boolean isRegistered = userService.registerUser(user);
         if (isRegistered) {
-            return ResponseEntity.ok("用戶註冊成功");
+            return ResponseEntity.ok("用戶註冊成功:)");
         } else {
-            return ResponseEntity.badRequest().body("註冊失敗，手機號碼可能已被使用");
+            return ResponseEntity.badRequest().body("註冊失敗:(，手機號碼可能已被使用");
         }
     }
 
@@ -33,9 +33,9 @@ public class ControllerClass {
     public ResponseEntity<String> loginUser(@RequestBody User user) {
         boolean isAuthenticated = userService.authenticateUser(user);
         if (isAuthenticated) {
-            return ResponseEntity.ok("用戶身份驗證成功");
+            return ResponseEntity.ok("用戶身份驗證成功:)");
         } else {
-            return ResponseEntity.status(401).body("身份驗證失敗");
+            return ResponseEntity.status(401).body("身份驗證失敗:(");
         }
     }
 
@@ -44,9 +44,9 @@ public class ControllerClass {
     public ResponseEntity<String> borrowBook(@RequestBody BorrowRequest borrowRequest) {
         boolean success = bookService.borrowBook(borrowRequest.getUserId(), borrowRequest.getInventoryId());
         if (success) {
-            return ResponseEntity.ok("書籍借閱成功。");
+            return ResponseEntity.ok("書籍借閱成功啦。");
         } else {
-            return ResponseEntity.badRequest().body("書籍借閱失敗，可能是因為書籍已被借出或不存在。");
+            return ResponseEntity.badRequest().body("書籍借閱失敗:(可能是因為書籍已被借出或不存在。");
         }
     }
 
@@ -61,7 +61,7 @@ public class ControllerClass {
         }
     }
 
-    // 用於接收借書和還書請求的數據結構
+    // 借書和還書請求
     private static class BorrowRequest {
         private Long userId;
         private Long inventoryId;
@@ -83,5 +83,5 @@ public class ControllerClass {
         }
     }
 
-    // 其他控制器方法...
+    //0316
 }

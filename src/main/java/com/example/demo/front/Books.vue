@@ -37,7 +37,7 @@ export default {
       axios.post('/api/borrow', {userId: this.$store.state.userId, inventoryId: id})
           .then(() => {
             alert("借書成功！");
-            this.fetchBooks(); // 重新獲取書籍列表以更新狀態
+            this.fetchBooks();
           })
           .catch(error => {
             alert("借書失敗：" + error.response.data.message);
@@ -47,7 +47,7 @@ export default {
       axios.post('/api/return', {userId: this.$store.state.userId, inventoryId: id})
           .then(() => {
             alert("還書成功！");
-            this.fetchBooks(); // 重新獲取書籍列表以更新狀態
+            this.fetchBooks();
           })
           .catch(error => {
             alert("還書失敗：" + error.response.data.message);
@@ -58,7 +58,6 @@ export default {
 </script>
 
 <style>
-/* 添加您的樣式 */
 .books ul {
   list-style-type: none;
   padding: 0;

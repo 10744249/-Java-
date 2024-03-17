@@ -29,7 +29,7 @@ public class BorrowingRecord {
     @Column(name = "status")
     private String status; // 新增借閱記錄的狀態
 
-    // Getters 和 Setters
+   
     public Long getId() {
         return id;
     }

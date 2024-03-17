@@ -31,11 +31,11 @@ export default {
     onLogin() {
       axios.post('/api/login', this.loginInfo)
           .then(response => {
-            // 登入成功後的處理，例如保存令牌，導航到主頁面等
+           
             console.log("登入成功: ", response);
-            // 這裡假設後端返回的令牌在response.data.token中
+            
             localStorage.setItem("token", response.data.token);
-            this.$router.push('/home'); // 假設您有一個名為 home 的路由
+            this.$router.push('/home'); //0317
           })
           .catch(error => {
             console.error("登入失敗: ", error.response);
@@ -47,9 +47,9 @@ export default {
 </script>
 
 <style>
-/* 可以在這裡添加您的CSS樣式 */
+
 .login form {
-  /* 表單樣式 */
+
 }
 .login form div {
   margin-bottom: 10px;
